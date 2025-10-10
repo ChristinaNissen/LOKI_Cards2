@@ -81,32 +81,25 @@ const Voting = () => {
             </button>
           </form>
         </div>
-        {showConfirm && (
-          <div className="modal-backdrop">
-            <div className="modal">
-              <p>
-                Are you sure you want to cast your vote for{" "}
-                <strong>{selectedCandidate?.name}</strong>?
-              </p>
-              <div className="modal-actions">
-                <button className="button" onClick={handleConfirm}>
-                  Yes, cast vote
-                </button>
-                <button
-                  className="button"
-                  style={{
-                    background: "#eee",
-                    color: "#222",
-                  }}
-                  onClick={handleCancel}
-                >
-                  Cancel
-                </button>
-              </div>
+      </main>
+      {showConfirm && (
+        <div className="modal-backdrop">
+          <div className="modal">
+            <p>
+              Are you sure you want to cast your vote for{" "}
+              <strong>{selectedCandidate?.name}</strong>?
+            </p>
+            <div className="modal-actions">
+              <button className="button" onClick={handleConfirm}>
+                Yes, Cast Vote
+              </button>
+              <button className="button-secondary" onClick={handleCancel}>
+                Cancel
+              </button>
             </div>
           </div>
-        )}
-      </main>
+        </div>
+      )}
       <Footer />
     </div>
   );
