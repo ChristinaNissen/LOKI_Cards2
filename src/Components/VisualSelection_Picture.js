@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "./Voting-system.css";
-import "./VisualSelection.css";
+import "./VisualSelection_Picture.css";
 import img4 from "../Images/alligator.jpg"
 import img5 from "../Images/alpaca.jpg"
 import img6 from "../Images/Apples.png"

@@ -1,0 +1,51 @@
+.visual-selection-title {
+  color: "000";
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.visual-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.visual-selection-item {
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 100px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--background, #ffd600);
+  color: #222;
+  font-size: 48px; /* Make emojis bigger */
+  transition: background 0.2s, box-shadow 0.2s, border 0.2s;
+}
+
+.visual-selection-item:hover {
+  background: var(--primary-yellow-dark, #e6be00); /* Use the other yellow on hover */
+}
+
+.visual-selection-item.selected {
+  border: 3px solid var(--primary-yellow);
+  background: var(--primary-yellow);
+  color: var(--primary-yellow);
+  outline: 6px solid #ffd600;
+  box-shadow: 0 0 0 4px #ffd600;
+}
+
+.button:disabled {
+  background: #eee;
+  color: #aaa;
+  cursor: not-allowed;
+  border: none;
+}

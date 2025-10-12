@@ -4,8 +4,21 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "./Voting-system.css";
 import "./BallotConfirmation.css";
-import image_visual from "../Images/alpaca.jpg"
 
+const staticCard = {
+  numberOfEmojis: 6,
+  emojiRef: "😊",
+  colorRef: "#3887e7", // blue background
+  config: {
+    columns: 2,
+    rows: 3,
+    positions: [
+      [0, 0], [1, 0],
+      [0, 1], [1, 1],
+      [0, 2], [1, 2]
+    ]
+  }
+}; 
 
 const randomWords = ["sheep", "tree", "moon", "star", "river", "cloud"];
 const randomEmojis = [
@@ -202,71 +215,34 @@ const BallotConfirmation = ({ type = "card", ballotNumber = 12345 }) => {
               <div
                 className="confirmation-card"
                 style={{
-                  backgroundColor: colorRef,
+                  backgroundColor: staticCard.colorRef,
                   position: "relative"
                 }}
               >
-                <span className="card-corner card-corner-top-left">{numberOfEmojis}</span>
-                <span className="card-corner card-corner-bottom-right">{numberOfEmojis}</span>
+                <span className="card-corner card-corner-top-left">{staticCard.numberOfEmojis}</span>
+                <span className="card-corner card-corner-bottom-right">{staticCard.numberOfEmojis}</span>
                 <div className="emoji-area">
                   <div
                     className="confirmation-emoji-grid"
                     style={{
-                      gridTemplateColumns: `repeat(${config.columns}, 1fr)`,
-                      gridTemplateRows: `repeat(${config.rows}, 1fr)`
+                      gridTemplateColumns: `repeat(${staticCard.config.columns}, 1fr)`,
+                      gridTemplateRows: `repeat(${staticCard.config.rows}, 1fr)`
                     }}
                   >
-                    {config.positions.map(([x, y], i) => {
-  let fontSize;
-  switch (numberOfEmojis) {
-    case 1:
-      fontSize = "80px";
-      break;
-    case 2:
-      fontSize = "45px";
-      break;
-    case 3:
-      fontSize = "45px";
-      break;
-    case 4:
-      fontSize = "45px";
-      break;
-    case 5:
-      fontSize = "45px";
-      break;
-    case 6:
-      fontSize = "45px";
-      break;
-    case 7:
-      fontSize = "45px";
-      break;
-    case 8:
-      fontSize = "45px";
-      break;
-    case 9:
-      fontSize = "45px";
-      break;
-    case 10:
-      fontSize = "38px";
-      break;
-    default:
-      fontSize = "36px";
-  }
-  return (
-    <span
-      key={i}
-      className="confirmation-emoji"
-      style={{
-        fontSize,
-        gridColumn: x % 1 === 0 ? x + 1 : "1 / span 2",
-        gridRow: y + 1,
-        justifySelf: "center"
-      }}
-    >
-      {emojiRef}
-    </span>
-  );
-})}
+                    {staticCard.config.positions.map(([x, y], i) => (
+                      <span
+                        key={i}
+                        className="confirmation-emoji"
+                        style={{
+                          fontSize: "45px",
+                          gridColumn: x + 1,
+                          gridRow: y + 1,
+                          justifySelf: "center"
+                        }}
+                      >
+                        {staticCard.emojiRef}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>

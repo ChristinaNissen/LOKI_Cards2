@@ -5,9 +5,9 @@ import Welcome from './Components/Welcome';
 import Login from './Components/Login';
 import VotedBefore from './Components/VotedBefore';
 import Voting from './Components/Voting';
-import BallotConfirmation from './Components/BallotConfirmation';
+import BallotConfirmation from './Components/BallotConfirmation_Card';
 import StudyInfo2 from './Components/StudyInfo2';
-import VisualSelection from './Components/VisualSelection';
+import VisualSelection from './Components/VisualSelection_Card';
 
 
 function App() {
