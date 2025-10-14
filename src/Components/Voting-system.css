@@ -176,22 +176,47 @@ input:focus,
 }
 
 .ballot-row input[type="radio"] {
-  accent-color: var(--border);
-  width: 22px;
-  height: 22px;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  padding: 0;
   margin-right: 18px;
+  border: 1px solid #a59d9d;
+  border-radius: 50% !important;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative; /* ensures pseudo-element is contained */
+}
+
+.ballot-row input[type="radio"]:checked::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: var(--primary-yellow);
+  border: 2px solid var(--primary-yellow);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .ballot-candidate {
   flex: 1;
-  color: #444;
+  color: #000;
   margin: 0 0 0 8px;
   text-align: left;
   font-weight: normal;
 }
 
 .ballot-party {
-  color: #444;
+  color: #000;
   margin: 0 0 0 24px;
   min-width: 100px;
   text-align: right;
@@ -279,5 +304,25 @@ p, span, label {
   font-size: 0.875rem;
 }
 
-/* Adjust these values as needed */
+/* Error overlay styling */
+.error-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
 
+.error-message {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
