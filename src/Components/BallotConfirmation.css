@@ -31,9 +31,9 @@
 }
 
 .confirmation-date {
-  font-size: 14px;
+  font-size: 18px;
   margin-top: 8px;
-  color: #444;
+  color: #000!important;
 }
 
 .confirmation-img {
@@ -140,3 +140,31 @@
   padding: 0 20px;
   text-align: center;
 }
+
+.instruction-list ul {
+  padding-left: 0px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+    list-style-position: outside;
+
+}
+
+.instruction-list {
+  margin-left: 0px;
+}
+
+.row-border {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.confirmation-info {
+  margin-top: 0px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.confirmation-info > div {
+  margin: 4px 0;
+}
+

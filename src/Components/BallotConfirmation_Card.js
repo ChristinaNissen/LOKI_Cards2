@@ -190,6 +190,19 @@ const BallotConfirmation = ({ type = "card", ballotNumber = 12345 }) => {
           <h1 style={{ width: "100%", textAlign: "left", margin: "0 0 10px 40px" }}>
             Card 
           </h1>
+          <div
+    className="instruction-list"
+    style={{ maxWidth: "800px", margin: "0 auto 20px auto", textAlign: "left", paddingLeft: "35px" }}
+  >
+    <ul>
+      <li>
+        You need to <strong>remember</strong> this card if you want to update your vote later in the election.
+      </li>
+      <li>
+        You should <strong>not share</strong> your card with anyone, and you should <strong>not save</strong> it anywhere.
+      </li>
+    </ul>
+  </div>
           <div className="confirmation-visual">
             {type === "card" && (
               <div
@@ -199,8 +212,12 @@ const BallotConfirmation = ({ type = "card", ballotNumber = 12345 }) => {
                   position: "relative"
                 }}
               >
-                <span className="card-corner card-corner-top-left">{staticCard.numberOfEmojis}</span>
-                <span className="card-corner card-corner-bottom-right">{staticCard.numberOfEmojis}</span>
+                <span className="card-corner card-corner-top-left">
+                  {staticCard.numberOfEmojis}
+                </span>
+                <span className="card-corner card-corner-bottom-right">
+                  {staticCard.numberOfEmojis}
+                </span>
                 <div className="emoji-area">
                   <div
                     className="confirmation-emoji-grid"
@@ -227,9 +244,9 @@ const BallotConfirmation = ({ type = "card", ballotNumber = 12345 }) => {
                 </div>
               </div>
             )}
-            <div className="confirmation-datetime">{dateTime}</div>
-            <div className="confirmation-candidate">
-              Candidate: {votedCandidate}
+            <div className="confirmation-info">
+              <div className="confirmation-datetime">{dateTime}</div>
+              <div className="confirmation-candidate"> {votedCandidate}</div>
             </div>
           </div>
         </div>
