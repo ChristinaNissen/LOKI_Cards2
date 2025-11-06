@@ -1,9 +1,9 @@
 import React from "react";
 import "./ProcessBar.css";
 
-const ProcessBar = ({ steps, currentStep }) => {
+const ProcessBar = ({ steps, currentStep, votedBeforeYes }) => {
   return (
-    <div className="process-bar-container">
+    <div className={`process-bar-container${votedBeforeYes ? 'voted-before-yes' : ''}`}>
       <div className="icon-row">
         {steps.map((step, index) => {
           const stepNumber = index + 1;
