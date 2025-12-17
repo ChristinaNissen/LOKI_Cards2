@@ -364,16 +364,6 @@ const VisualSelection = () => {
   const handleNext = async (e) => {
     if (selected.length > 0) {
       e.preventDefault();
-      // Gather selected card features
-      const selectedCardFeatures = selected.map(idx => {
-        const card = cards[idx];
-        return {
-          numberOfEmojis: card.numberOfEmojis,
-          emojiRef: card.emojiRef,
-          colorRef: card.colorRef
-        };
-      });
-      await saveBallotSelections(selectedCardFeatures);
       setShowConfirm(true);
     } else {
       setShowError(true);
@@ -411,6 +401,7 @@ const VisualSelection = () => {
     setIsCorrectSelection(isCorrect);
 
     try {
+      // Save ballot selections and correct selection status when user confirms
       await saveBallotSelections(selectedCardFeatures); // Now stores colorRef as hex
       // Use the calculated isCorrect value directly instead of the state
       await saveCorrectSelections(Boolean(isCorrect));
@@ -485,10 +476,10 @@ const VisualSelection = () => {
           
         </div>
         <div className="card" style={{ maxWidth: 1000, width: "100%", position: "relative"}}>
-          <h1 style={{ width: "100%", textAlign: "left", margin: "0 0 10px 55px" }}>
+          <h1 className="card-heading-select">
             Select your cards
           </h1>
-          <div className="instruction-list" style={{ maxWidth: "800px", margin: "0 auto 20px auto", textAlign: "left" }}>
+          <div className="instruction-list">
             <ul>
               <li>You need to select all the cards below that you have seen when casting your previous ballots.</li>
               <li>The system will not reveal if your selection is correct for security reasons.</li>
@@ -568,13 +559,12 @@ const VisualSelection = () => {
 <hr className="filter-divider-visual-card" style={{ width: "90%" }} />
 
           <div className="selected-scroll-wrapper">
-            <div className="selected-count-inside">
-              {selected.length} card{selected.length === 1 ? "" : "s"} selected
-            </div>
-            
             <p className="scroll-instruction-text">
               Use the "Next page" button below to see more cards.
             </p>
+            <div className="selected-count-inside">
+              {selected.length} card{selected.length === 1 ? "" : "s"} selected
+            </div>
           </div>
 
           {/* Wrap the grid with a container */}
