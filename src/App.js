@@ -35,6 +35,7 @@ function App() {
   const hideNavbarOn = ["/", "/studyinfo1", "/studyinfo2", "/studyinfo3", "/consent"];
   const [userSelectedYes, setUserSelectedYes] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null); // New state for selected card
+  const [hasReachedStudyInfo2, setHasReachedStudyInfo2] = useState(false); // Track if user reached studyinfo2
   // Initialize selectedImage from sessionStorage if it exists
   const [selectedImage, setSelectedImage] = useState(() => {
     const saved = sessionStorage.getItem('selectedImage');
@@ -51,6 +52,13 @@ function App() {
     }
   }, [selectedImage]);
 
+  // Track when user reaches studyinfo2
+  useEffect(() => {
+    if (location.pathname === '/studyinfo2') {
+      setHasReachedStudyInfo2(true);
+    }
+  }, [location.pathname]);
+
   return (
     <>
       {!hideNavbarOn.includes(location.pathname) && (
@@ -65,8 +73,12 @@ function App() {
           <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="/votedbefore" element={<VotedBefore />} />
           <Route path="/voting" element={<Voting  />} />
-          <Route path="/confirmation" element={<BallotConfirmation setIsLoggedIn={setIsLoggedIn} />} />
-          <Route path="/confirmation2" element={<BallotConfirmation_Card2 setIsLoggedIn={setIsLoggedIn} />} />
+          <Route path="/confirmation" element={
+            hasReachedStudyInfo2 ? <Navigate to="/studyinfo2" replace /> : <BallotConfirmation setIsLoggedIn={setIsLoggedIn} />
+          } />
+          <Route path="/confirmation2" element={
+            hasReachedStudyInfo2 ? <Navigate to="/studyinfo2" replace /> : <BallotConfirmation_Card2 setIsLoggedIn={setIsLoggedIn} />
+          } />
           <Route path="/studyinfo2" element={<StudyInfo2 />} />
           <Route path="/studyinfo3" element={<StudyInfo3 />} />
           <Route path="/selection" element={<VisualSelection />} />
