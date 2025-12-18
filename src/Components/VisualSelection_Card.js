@@ -169,7 +169,6 @@ function generateRandomCard() {
   const emojiRef = randomEmojis[Math.floor(Math.random() * randomEmojis.length)];
   const colorObj = COLOR_LIST[Math.floor(Math.random() * COLOR_LIST.length)];
   const colorRef = colorObj.hex;
-  const colorName = colorObj.name;
   const config = getEmojiGridConfig(numberOfEmojis);
   return { numberOfEmojis, emojiRef, colorRef, config };
 }

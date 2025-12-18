@@ -8,14 +8,13 @@ import Login from './Components/Login';
 import VotedBefore from './Components/VotedBefore';
 import Voting from './Components/Voting';
 import BallotConfirmation from './Components/BallotConfirmation_Card';
-import BallotConfirmation_Card2 from './Components/BallotConfirmation_Card2';
+import BallotConfirmationCard2 from './Components/BallotConfirmation_Card2';
 import StudyInfo2 from './Components/Study-Info/StudyInfo2';
 import StudyInfo3 from './Components/Study-Info/StudyInfo3';
 import VisualSelection from './Components/VisualSelection_Card';
 import Navbar from './Components/Navbar';
 import './App.css';
 import VoteContext from "./Contexts/VoteContext";
-import PrivateModeWarning from './Components/PrivateModeWarning';
 import NoPrivateMode from './Components/NoPrivateMode';
 import Help from './Components/Help';
 import Parse from "parse";
@@ -34,7 +33,6 @@ function App() {
   const location = useLocation();
   const hideNavbarOn = ["/", "/studyinfo1", "/studyinfo2", "/studyinfo3", "/consent"];
   const [userSelectedYes, setUserSelectedYes] = useState(false);
-  const [selectedCard, setSelectedCard] = useState(null); // New state for selected card
   const [hasReachedStudyInfo2, setHasReachedStudyInfo2] = useState(false); // Track if user reached studyinfo2
   // Initialize selectedImage from sessionStorage if it exists
   const [selectedImage, setSelectedImage] = useState(() => {
@@ -77,7 +75,7 @@ function App() {
             hasReachedStudyInfo2 ? <Navigate to="/studyinfo2" replace /> : <BallotConfirmation setIsLoggedIn={setIsLoggedIn} />
           } />
           <Route path="/confirmation2" element={
-            hasReachedStudyInfo2 ? <Navigate to="/studyinfo2" replace /> : <BallotConfirmation_Card2 setIsLoggedIn={setIsLoggedIn} />
+            hasReachedStudyInfo2 ? <Navigate to="/studyinfo2" replace /> : <BallotConfirmationCard2 setIsLoggedIn={setIsLoggedIn} />
           } />
           <Route path="/studyinfo2" element={<StudyInfo2 />} />
           <Route path="/studyinfo3" element={<StudyInfo3 />} />

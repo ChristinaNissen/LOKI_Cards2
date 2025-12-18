@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./PrivateModeWarning.css";
 import Footer from "./Footer";
 import "./Voting-system.css";
-import { FaItalic } from "react-icons/fa";
 import video from "../Assets/private1.mp4";
 
 const PrivateModeWarning = () => {
