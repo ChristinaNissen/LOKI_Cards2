@@ -329,7 +329,7 @@ const VisualSelection = () => {
     fetchVisual();
   }, []);
 
-  // Close modal if all words are removed
+  // Close modal if all cards are removed
   useEffect(() => {
     if (showConfirm && selected.length === 0) {
       setShowConfirm(false);
@@ -488,7 +488,7 @@ const VisualSelection = () => {
           </h1>
           <div className="instruction-list">
             <ul>
-              <li>You must select <strong>all</strong> the words below that you have seen when casting your previous ballots. This includes words from both valid and invalid ballots.</li>
+              <li>You must select <strong>all</strong> the cards below that you have seen when casting your previous ballots. This includes cards from both valid and invalid ballots.</li>
               <li>The system will not reveal if your selection is correct for security reasons.</li>
               <li>Only the correct selection will ensure that your vote gets updated and counted into the results.</li>
               <li>If you are unsure or cannot remember your cards, please contact election officials at your polling station.</li>
