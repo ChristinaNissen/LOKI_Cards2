@@ -25,6 +25,8 @@ export async function addVoter(ID, password, RandomID) {
   
   try {
     await user.signUp();
+    console.log("User signed up and automatically logged in");
+    return user; // Return the user object with active session
   } catch (err) {
     console.error("addVoter error:", err, err.name, err.message, err.code);
     if (err.xhr) console.error("err.xhr:", err.xhr);
@@ -54,6 +56,7 @@ export async function loginVoter(ID, password) {
   
   try {
     await Parse.User.logIn(ID, password);
+    console.log("User logged in successfully, session:", Parse.User.current()?.getSessionToken());
   } catch (err) {
     console.error("loginVoter error:", err, err.message, err.code);
     if (err.code === 101) {

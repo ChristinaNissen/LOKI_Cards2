@@ -91,8 +91,20 @@ const handleSubmit = async (e) => {
           const random4Digit = Math.floor(1000 + Math.random() * 9000).toString();
           await addVoter(hashedUserID, hashedPassword, random4Digit);
           console.log("Signup successful");
-          setIsLoggedIn(true);
-          navigate("/votedbefore");
+          
+          // Verify user is logged in after signup
+          const Parse = require('parse');
+          const currentUser = Parse.User.current();
+          console.log("Current user after signup:", currentUser?.get("username"));
+          console.log("Session token:", currentUser?.getSessionToken());
+          
+          if (currentUser) {
+            setIsLoggedIn(true);
+            navigate("/votedbefore");
+          } else {
+            console.error("No current user after signup!");
+            setPasswordError("Signup succeeded but login failed. Please try logging in manually.");
+          }
         } catch (signupError) {
           console.error("Signup error:", signupError);
           if (
