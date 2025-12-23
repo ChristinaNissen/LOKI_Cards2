@@ -65,12 +65,15 @@ const BallotConfirmation_Card2 = ({ type = "card", ballotNumber = 12345, isLogge
          <div className="intro-container">
           <h1 className="intro-title">Confirmation</h1>
           <div className="text-main text-main-confirmation">
-            You have cast your ballot succesfully! Below is a visual presentation of your cast ballot. 
+            You have cast your ballot successfully! Below is your card for this ballot. 
           </div>
           <div className="security-box">
             <p className="text-small">
-              <strong>Security Feature:</strong><br/>
-              This part of the voting system ensures that you can vote freely without any outside pressure.        
+              <strong>Why do you need this card?</strong><br />
+              This card is a unique visual identifier linked to your voting record. You will need to remember this card from memory if you wish to update your vote later in the election, as it proves your identity and ensures that only you can make changes to your ballot.<br /><br />
+              To protect against coercion risks, please take time to memorise this card now. Do not write it down or save it anywhere. Relying on your memory helps keep your vote private and secure.
+              <br /><br />
+              <a href="/help#ballot-verification-security" className="faq-link">Read more in the FAQ</a>
             </p>
           </div>
         </div>
