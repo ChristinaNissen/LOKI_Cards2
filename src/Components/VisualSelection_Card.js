@@ -537,13 +537,14 @@ const VisualSelection = () => {
 </div>
 <hr className="filter-divider-visual-card" style={{ width: "90%" }} />
 
-          <div className="selected-scroll-wrapper">
-            <p className="scroll-instruction-text">
-              Scroll through the cards and use the<br />"Next page" button below to see more.
-            </p>
+        <div className="selected-scroll-wrapper">
             <div className="selected-count-inside">
               {selected.length} selected
             </div>
+            
+            <p className="scroll-instruction-text">
+              Scroll through the cards and use the "Next page" button below to see more.
+            </p>
           </div>
 
           {/* Wrap the grid with a container */}
