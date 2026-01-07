@@ -250,15 +250,38 @@ const COLOR_LIST = [
 ];
 
 const blackTextColors = [
-  "Ivory",
-  "Beige",
-  "Pearl",
   "Yellow",
+  "Orange",
+  "Red",
+  "Pink",
   "Cream",
+  "Tan",
+  "Mustard",
   "Lavender",
-  "Lemon Yellow",
+  "Mauve",
   "Cyan",
-  "Peach"
+  "Peach",
+  "Lime Green",
+  "Salmon",
+  "Beige",
+  "Turquoise",
+  "Aqua",
+  "Mint",
+  "Sky Blue",
+  "Saffron",
+  "Lemon Yellow",
+  "Amber",
+  "Pearl",
+  "Ivory",
+  "Tangerine",
+  "Emerald",
+  "Bronze",
+  "Lilac",
+  "Mocha",
+  "Coral",
+  "Violet",
+  "Gray",
+  "Ash"
 ];
 
 const VisualSelection = () => {
@@ -431,19 +454,20 @@ const VisualSelection = () => {
     <div className="page-wrapper">
       <main className="welcome-main">
         <ProcessBar steps={steps} currentStep={currentStep} />
-        <div className="intro-container intro-selection">
-          <h1 className="intro-title">Identification of previously cast ballots</h1>
-          <div className="text-main text-main-confirmation" style={{ maxWidth: "800px", textAlign: "center" }}>
+        <div className="intro-container intro-selection">          <h1  className="intro-heading">
+Identification of previously cast ballots</h1>
+          <div className="text-main text-main-confirmation text-main-selection">
             Please select all cards below that you have seen when casting your previous ballots.
           </div>
-          <div className="security-box">
-            <p className="text-small">
+          <div className="security-box-selection">
+              <p className="text-small">
               <strong>Why is this step needed?</strong><br />
               This feature verifies your identity, ensuring that only you can update your vote by recognising the cards shown to you after your previous voting session(s).<br /><br />
               This feature also protects against coercion. If you are pressured to vote a certain way, you can intentionally select the wrong cards to prevent your vote from being updated, without revealing your true voting history.<br /><br />
               If you cannot remember your card(s), you can always vote in person at your local polling station.<br /><br />
               <a href="/help#ballot-verification-security" className="faq-link">Read more in the FAQ</a>
             </p>
+
           </div>
           {/*
           <div className="text-main" style={{maxWidth: "800px", textAlign: "left"}}>
@@ -454,11 +478,11 @@ const VisualSelection = () => {
           </div>*/}
           
         </div>
-        <div className="card" style={{ maxWidth: 1000, width: "100%", position: "relative"}}>
-          <h1 className="card-heading-select">
+        <div className="card-wide">
+          <h1 className="card-heading-select" style={{ width: "100%", textAlign: "left", margin: "0 0 10px 40px" }}>
             Select your cards
           </h1>
-          <div className="instruction-list">
+          <div className="instruction-list" style={{ maxWidth: "800px", margin: "0 auto 20px auto", textAlign: "left", paddingLeft: "35px" }}>
             <ul>
               <li>You must select <strong>all</strong> the cards below that you have seen when casting your previous ballots. This includes cards from both valid and invalid ballots.</li>
               <li>The system will not reveal if your selection is correct for security reasons.</li>
@@ -535,7 +559,6 @@ const VisualSelection = () => {
     </div>
   </div>
 </div>
-<hr className="filter-divider-visual-card" style={{ width: "90%" }} />
 
         <div className="selected-scroll-wrapper">
             <div className="selected-count-inside">
@@ -612,7 +635,7 @@ const VisualSelection = () => {
                 {card.config.positions.map(([x, y], i) => {
                   let fontSize;
                   switch (card.numberOfEmojis) {
-                    case 1: fontSize = "80px"; break;
+                    case 1: fontSize = "58px"; break;
                     case 2:
                     case 3:
                     case 4:
@@ -620,9 +643,9 @@ const VisualSelection = () => {
                     case 6:
                     case 7:
                     case 8:
-                    case 9: fontSize = "45px"; break;
-                    case 10: fontSize = "32px"; break;
-                    default: fontSize = "36px";
+                    case 9: fontSize = "33px"; break;
+                    case 10: fontSize = "23px"; break;
+                    default: fontSize = "26px";
                   }
                   return (
                     <span
