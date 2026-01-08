@@ -82,7 +82,7 @@ const BallotConfirmation = ({ type = "card", ballotNumber = 12345, isLoggedIn, s
           </h1>
           <div
     className="instruction-list"
-    style={{ maxWidth: "800px", margin: "0 auto 20px auto", textAlign: "left", paddingLeft: "35px" }}
+    style={{ maxWidth: "800px", margin: "0 auto 20px auto", textAlign: "left" }}
   >
     <ul>
       <li> 

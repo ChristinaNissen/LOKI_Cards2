@@ -279,6 +279,8 @@ body {
     margin-top: 12px;
     border-radius: 8px;
     box-sizing: border-box;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .card .card-actions {

@@ -127,7 +127,8 @@
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-bottom:0px;
     box-sizing: border-box;
   }
 
@@ -147,6 +148,27 @@
   .text-main.text-voted-before{
         text-align:center !important;
   }
+
+   .security-box-voted-before {
+    width: 100vw;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 8px;
+    box-sizing: border-box;
+  }
+
+  .button-container-voted-before {
+    margin-top: 20px !important;
+  }
+
+  .text-main.text-voted-before {
+    width: 100vw;
+    max-width: 90%;
+    text-align: center !important;
+  }
+  
+  
 
 
 }

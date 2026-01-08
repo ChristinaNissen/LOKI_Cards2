@@ -146,15 +146,14 @@ background-color: rgba(255, 255, 204, 0.8);
 }
 
 .instruction-list ul {
-  padding-left: 0px;
+  padding-left: 20px;
   line-height: 1.6;
   font-size: 1.1rem;
-    list-style-position: outside;
-
+  list-style-position: outside;
 }
 
 .instruction-list {
-  margin-left: 0px;
+  padding-left: 35px;
 }
 
 .row-border {
@@ -198,6 +197,9 @@ background-color: rgba(255, 255, 204, 0.8);
 
   .text-main.text-main-confirmation{
     text-align:center!important;
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;    
   }
   .intro-container{
    width: 90vw !important;
@@ -208,13 +210,17 @@ background-color: rgba(255, 255, 204, 0.8);
     box-sizing: border-box !important;
 
   }
-  .security-box{
-    width: 90% !important;
-    max-width: 90% !important;
-    margin: 20px auto !important;
-    box-sizing: border-box !important;
-    text-align: center !important;
+  .security-box-confirmation{
+    width: 100vw;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 8px;
+    box-sizing: border-box
+  }
 
+  .button.logout-button-confirmation{
+    margin-top: 20px !important;
   }
 
    .card-wide.card-confirmation {
@@ -234,32 +240,28 @@ background-color: rgba(255, 255, 204, 0.8);
   }
 
   .card-title{
-    text-align: center !important;
     width: 100%;
-    margin-left: 0!important;
-    margin-right: 0!important;
-    padding:0!important;
-    
-  }
-
-  .instruction-list.ul.li{
-    font-size:16px;
+    margin-left: 20px;
+    margin-right: 0;
     
   }
 
  .instruction-list {
     padding-top: 12px !important;
-    padding-bottom:0!important;
+    padding-bottom: 0 !important;
+    padding-left: 20px !important;
   }
 
   .instruction-list ul {
     font-size: 16px !important;
     color: #000;
     line-height: 1.5 !important;
-    padding-left: 5px !important;
-    padding-right:5px !important;
+    padding-left: 0 !important;
+    padding-right: 5px !important;
     margin-top: 0 !important;
-    margin-bottom: 0 !important;    
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    list-style-position: outside !important;
   }
   .instruction-list ul li {
     margin-bottom: 16px !important;
@@ -298,9 +300,15 @@ background-color: rgba(255, 255, 204, 0.8);
     margin-top:0!important;
   }
 
+  .confirmation-card {
+    width: 180px !important;
+    height: 280px !important;
+    border-radius: 20px !important;
+  }
 
-     
-  
+  .card-corner {
+    font-size: 1.2rem !important;
+  }
 
   @media (max-width: 600px) {
   .confirmation-card-label {
