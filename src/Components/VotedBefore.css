@@ -1,24 +1,3 @@
-.security-box-voted-before {
-  max-width: 700px;
-  width: 100%;
-  margin: 20px auto;
-  background-color: rgba(255, 255, 204, 0.8); /* Light yellow */
-  border: 2px solid #ffe066;
-  padding: 18px 24px;
-  font-size: 1.05rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-  text-align: left;
-  border-radius: 0;
-  box-sizing: border-box;
-}
-
-.card-wide.voted-before {
-  max-width: 700px;
-  margin: 0 auto 24px auto;
-  margin-top: 25px;
-  padding: 40px 20px;
-  box-sizing: border-box;
-}
 /* FAQ link styled in dark yellow */
 .faq-link {
   color: #bfa700;
@@ -86,6 +65,28 @@
   font-size: 1.13rem;
 }
 
+.security-box-voted-before {
+  max-width: 700px;
+  width: 100%;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 204, 0.8); /* Light yellow */
+  border: 2px solid #ffe066;
+  padding: 18px 24px;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  text-align: left;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.card-wide.voted-before {
+  max-width: 700px;
+  margin: 0 auto 24px auto;
+  margin-top: 25px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
 @media (max-width: 600px) {
 
   .h1.voted-before-h1{
@@ -123,12 +124,7 @@
   .card-wide.voted-before{
     width: 100vw;
     max-width: 90%;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-    margin-top: 10px;
-    margin-bottom:0px;
+    margin-top: 12px;
     box-sizing: border-box;
   }
 
@@ -149,26 +145,14 @@
         text-align:center !important;
   }
 
-   .security-box-voted-before {
+  .security-box-voted-before{
     width: 100vw;
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
     padding: 12px 8px;
-    box-sizing: border-box;
+    box-sizing: border-box
   }
-
-  .button-container-voted-before {
-    margin-top: 20px !important;
-  }
-
-  .text-main.text-voted-before {
-    width: 100vw;
-    max-width: 90%;
-    text-align: center !important;
-  }
-  
-  
 
 
 }
