@@ -155,7 +155,7 @@ function getEmojiGridConfig(n) {
 function generateRandomCard() {
   const numberOfEmojis = Math.floor(Math.random() * 9) + 1;
   const emojiRef = randomEmojis[Math.floor(Math.random() * randomEmojis.length)];
-  const colorObj = COLOR_LIST[Math.floor(Math.random() * COLOR_LIST.length)];
+  const colorObj = GENERATION_COLOR_LIST[Math.floor(Math.random() * GENERATION_COLOR_LIST.length)];
   const colorRef = colorObj.hex;
   const config = getEmojiGridConfig(numberOfEmojis);
   return { numberOfEmojis, emojiRef, colorRef, config };
@@ -237,6 +237,9 @@ const COLOR_LIST = [
   { name: "Umber", hex: "#635147" }
 ];
 
+const GENERATION_COLOR_LIST = COLOR_LIST.filter(c => c.name !== "Green");
+
+
 const blackTextColors = [
   "Yellow",
   "Orange",
@@ -251,6 +254,11 @@ const blackTextColors = [
   "Peach",
   "Lime Green",
   "Salmon",
+  "Green",
+  "Lime Green",
+  "Cherry Red",
+  "Magenta",
+  "Fuschia",
   "Beige",
   "Turquoise",
   "Aqua",
