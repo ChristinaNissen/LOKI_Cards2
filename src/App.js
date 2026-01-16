@@ -21,8 +21,8 @@ import Parse from "parse";
 
 // Initialize Parse SDK for Back4App
 Parse.initialize(
-  "aFtAdHBZI5s04YUs47bPYdDTlnVrRhSI9Dpl9CJ5", // Application ID
-  "AXphTNbNhIt6mb9NK5xa2I5SKZ0UwxyBl3aAAH1u" // JavaScript Key
+  "yvjUgITQRwpIZlXrcknVci1BYCyoEESjRo8YCAxf", // Application ID
+  "0fBn1SSW68Z5obirGbPGr5WnzjHZ5F0TVXmoibfK" // JavaScript Key
 );
 Parse.serverURL = "https://parseapi.back4app.com/";
 
