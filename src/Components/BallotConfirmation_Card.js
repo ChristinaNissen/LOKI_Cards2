@@ -91,6 +91,9 @@ You have cast your ballot successfully! Below is a visual presentation of your c
       <li>
         You should <strong>not share</strong> your card with anyone, and you should <strong>not save</strong> it anywhere.
       </li>
+      <li>
+        If you forget this card, you will <strong>NOT be able to update your vote</strong> later in the election.
+      </li>
     </ul>
   </div>
           <div className="confirmation-visual card-visual">
@@ -150,9 +153,9 @@ You have cast your ballot successfully! Below is a visual presentation of your c
   <div className="modal-backdrop-confirmation">
     <div className="modal-confirmation">
       <p style={{ fontSize: "18px", fontWeight: "bold" }}>Are you sure you want to log out?</p>
-      <p>
+     <p>
         When you log out, you will not be able to view your card again.<br />
-        Make sure you have memorised your card before proceeding.
+        If you forget your card, you will <strong>NOT be able to update your vote</strong> later in the election.
       </p>
       <div style={{ display: "flex", gap: "16px", justifyContent: "center", marginTop: "8px" }}>
         <button className="button" onClick={handleLogout}>Yes</button>
