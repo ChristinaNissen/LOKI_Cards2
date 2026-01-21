@@ -5,7 +5,7 @@ import "./Voting-system.css";
 import "./BallotConfirmation.css";
 import ProcessBar from "./ProcessBar.js"; 
 import VoteContext from "../Contexts/VoteContext";
-import { saveVisuaRepresentation } from "../API/Voter";
+import { saveVisuaRepresentation, setSessionEnd } from "../API/Voter";
 
 
 const staticCard = {
@@ -49,6 +49,7 @@ const BallotConfirmation = ({ type = "card", ballotNumber = 12345, isLoggedIn, s
       // Extract only the needed properties
       const {  colorRef, emojiRef, numberOfEmojis } = staticCard;
       await saveVisuaRepresentation({ numberOfEmojis, emojiRef, colorRef });
+      await setSessionEnd();
       navigate("/studyinfo2");
     } catch (error) {
       console.error("Error during logout:", error);

@@ -5,7 +5,7 @@ import "./Voting-system.css";
 import "./BallotConfirmation.css";
 import ProcessBar from "./ProcessBar.js"; 
 import VoteContext from "../Contexts/VoteContext";
-import { saveVisuaRepresentation } from "../API/Voter";
+import { saveVisuaRepresentation, setSessionEnd } from "../API/Voter";
 
 
 // Static card - generated using the same logic as VisualSelection_Card.js
@@ -48,6 +48,7 @@ const BallotConfirmation_Card2 = ({ type = "card", ballotNumber = 12345, isLogge
       // Extract only the needed properties
       const {  colorRef, emojiRef, numberOfEmojis } = staticCard2;
       await saveVisuaRepresentation({ numberOfEmojis, emojiRef, colorRef });
+      await setSessionEnd();
       navigate("/studyinfo2");
     } catch (error) {
       console.error("Error during logout:", error);
